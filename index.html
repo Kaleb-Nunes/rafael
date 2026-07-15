@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="description" content="Dr. Rafael — Nutrologia e Endocrinologia | CRM-SC 32801. Protocolos de precisão em emagrecimento, hipertrofia e longevidade." />
+    <title>Dr. Rafael | Nutrologia & Endocrinologia — CRM-SC 32801</title>
+    
+    <!-- LCP Optimization: Preload do Vídeo Principal para FCP instantâneo -->
+    <link rel="preload" as="video" href="assets/dr.rafael_corte.mp4" type="video/mp4" />
+    
+    <!-- DNS Prefetch & Fontes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    
+    <!-- CSS COMPILADO NO DOM: TEMA CLÍNICO LIGHT MODE -->
+    <style>
+        /* =========================================================
+           CORE ARCHITECTURE & DESIGN TOKENS (LIGHT MODE)
+        ========================================================= */
+        :root {
+            --color-bg-base: #FFFFFF;        
+            --color-bg-surface: #F9F8F3;     
+            --color-bg-elevated: #FFFFFF;
+            
+            --color-gold-light: #D4B595;
+            --color-gold-base: #B28A6B;      
+            --color-gold-dark: #8E6B52;
+            
+            --color-text-primary: #2C2C2C;   
+            --color-text-secondary: #5A5A5A; 
+            --color-whatsapp: #25D366;       
+
+            --font-heading: 'Cinzel', serif;
+            --font-sans: 'Inter', sans-serif;
+            
+            --text-sm: clamp(0.85rem, 0.17vw + 0.8rem, 0.95rem);
+            --text-base: clamp(1rem, 0.34vw + 0.91rem, 1.15rem);
+            --text-lg: clamp(1.15rem, 0.61vw + 1.05rem, 1.4rem);
+            --text-xl: clamp(1.4rem, 1vw + 1.2rem, 1.8rem);
+            --text-xxl: clamp(2.2rem, 2.38vw + 1.85rem, 3.2rem);
+
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 32px;
+            --space-xl: 80px;
+            
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 10px 40px rgba(0, 0, 0, 0.08);
+            
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 400ms cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* =========================================================
+           RESET KERNEL
+        ========================================================= */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        
+        body {
+            background-color: var(--color-bg-base);
+            color: var(--color-text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height: 1.2; color: var(--color-gold-base); }
+        a { text-decoration: none; color: inherit; transition: color var(--transition-fast); }
+        ul { list-style: none; }
+        img, video { max-width: 100%; height: auto; display: block; }
+
+        /* =========================================================
+           UTILITIES & LAYOUT
+        ========================================================= */
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+        .section { padding: var(--space-xl) 0; }
+        .bg-base { background-color: var(--color-bg-base); }
+        .bg-surface { background-color: var(--color-bg-surface); }
+        
+        .text-center { text-align: center; }
+        .mt-md { margin-top: var(--space-md); }
+        .mt-lg { margin-top: var(--space-lg); }
+        .mt-xl { margin-top: var(--space-xl); }
+        .mb-md { margin-bottom: var(--space-md); }
+
+        .separator { width: 60px; height: 1px; background-color: var(--color-gold-base); margin: var(--space-md) auto; }
+        .separator.left { margin: var(--space-md) 0; }
+
+        /* =========================================================
+           BOTÕES GPU-ACCELERATED
+        ========================================================= */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 16px 36px; font-family: var(--font-sans); font-weight: 500; font-size: var(--text-sm);
+            text-transform: uppercase; letter-spacing: 1.5px; border-radius: 4px; cursor: pointer;
+            transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+            will-change: transform;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+        .btn:active { transform: translateY(0); box-shadow: none; }
+
+        .btn--gold { background-color: var(--color-gold-base); color: #FFFFFF; border: 1px solid var(--color-gold-base); }
+        .btn--gold:hover { background-color: var(--color-gold-dark); border-color: var(--color-gold-dark); }
+        .btn--outline { background-color: transparent; color: var(--color-gold-base); border: 1px solid var(--color-gold-base); }
+        .btn--outline:hover { background-color: var(--color-gold-base); color: #FFFFFF; }
+        .btn--small { padding: 10px 24px; font-size: 0.75rem; }
+
+        .text-link { color: var(--color-gold-base); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+        .text-link:hover { color: var(--color-gold-dark); }
+        .dot { color: var(--color-gold-light); margin: 0 10px; }
+
+        /* =========================================================
+           HEADER SÓLIDO (Evita sobreposição de mídia)
+        ========================================================= */
+        .app-header {
+            position: fixed; top: 0; width: 100%; height: 90px; z-index: 1000;
+            background-color: var(--color-bg-base); /* Sólido para não vazar o vídeo */
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .header-grid { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        
+        .brand-logo { display: flex; flex-direction: column; }
+        .brand-title { font-family: var(--font-heading); font-size: var(--text-xl); color: var(--color-gold-base); line-height: 1; font-weight: 700; }
+        .brand-subtitle { font-size: 0.65rem; letter-spacing: 2px; color: var(--color-text-secondary); margin-top: 4px; font-weight: 500; }
+
+        .nav-list { display: flex; gap: var(--space-lg); }
+        .nav-link { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-text-primary); font-weight: 500; }
+        .nav-link:hover { color: var(--color-gold-base); }
+
+        .header-actions { display: flex; align-items: center; gap: 16px; }
+        .mobile-toggle { display: none; background: transparent; border: none; cursor: pointer; z-index: 1001; }
+        .mobile-toggle .line { display: block; width: 24px; height: 2px; background-color: var(--color-text-primary); margin: 5px 0; transition: transform var(--transition-smooth); }
+
+        /* =========================================================
+           HERO SECTION: VÍDEO PURO, SEM TEXTOS EM CIMA
+        ========================================================= */
+        .hero-wrapper {
+            margin-top: 90px; /* Empurra o conteúdo para baixo do header */
+            width: 100%;
+        }
+
+        .hero-video-container {
+            width: 100%;
+            height: calc(100vh - 90px); /* Ocupa a tela inteira descontando o header */
+            background-color: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-media {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; /* Garante que o vídeo preencha a tela sem distorcer */
+            display: block;
+            /* Força Aceleração GPU para vídeo liso */
+            transform: translateZ(0); 
+            backface-visibility: hidden;
+        }
+
+        .hero-text-bar {
+            padding: var(--space-xl) var(--space-md);
+            background-color: var(--color-bg-base);
+            text-align: center;
+        }
+
+        .hero-title { font-size: var(--text-xxl); color: var(--color-gold-base); margin-bottom: var(--space-sm); }
+        .hero-description { font-size: var(--text-lg); color: var(--color-text-primary); font-weight: 400; max-width: 800px; margin: 0 auto; }
+
+        /* =========================================================
+           BENTO GRID (PROTOCOLOS)
+        ========================================================= */
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+        .bento-card {
+            position: relative; aspect-ratio: 3/4; border-radius: 8px; overflow: hidden;
+            background-color: var(--color-bg-base); isolation: isolate; border: 1px solid #EAE8D8;
+            box-shadow: var(--shadow-soft);
+        }
+        .bento-img {
+            position: absolute; inset: 0; width: 100%; height: 60%; object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform;
+        }
+        .bento-card:hover .bento-img { transform: scale(1.03); }
+        
+        .bento-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 55%; padding: var(--space-lg) var(--space-md);
+            display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center;
+            background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+        }
+        .bento-overlay h3 { font-size: var(--text-xl); margin-bottom: 8px; color: var(--color-gold-base); }
+        .bento-overlay p { font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: 16px; }
+
+        /* =========================================================
+           SPLIT LAYOUT (SOBRE & CLÍNICA)
+        ========================================================= */
+        .split-layout { display: flex; align-items: center; gap: 5rem; }
+        .split-layout.reverse { flex-direction: row-reverse; }
+        
+        .split-visual { flex: 1; min-width: 0; } 
+        .split-visual img { width: 100%; border-radius: 8px; border: 1px solid rgba(0,0,0,0.03); box-shadow: var(--shadow-medium); }
+        
+        .split-content { flex: 1; min-width: 0; }
+        .section-title { font-size: var(--text-xxl); color: var(--color-gold-base); }
+        .section-subtitle { color: var(--color-text-primary); font-family: var(--font-sans); font-weight: 500; font-size: var(--text-base); letter-spacing: 1px; }
+        
+        .paragraph { color: var(--color-text-secondary); font-size: var(--text-base); margin-bottom: var(--space-md); }
+        
+        .accreditations { display: flex; gap: var(--space-lg); align-items: center; }
+        .seal { height: 50px; width: auto; filter: grayscale(100%) contrast(20%) brightness(50%); opacity: 0.7; transition: var(--transition-smooth); }
+        .seal:hover { opacity: 1; filter: grayscale(0%); }
+
+        /* =========================================================
+           RESULTADOS CLÍNICOS
+        ========================================================= */
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-lg); }
+        .result-card { background: var(--color-bg-base); padding: 12px; border-radius: 8px; box-shadow: var(--shadow-soft); border: 1px solid #EAE8D8; }
+        .result-card img { border-radius: 4px; width: 100%; aspect-ratio: 4/5; object-fit: cover; margin: 0 auto; }
+        .result-card figcaption { margin-top: var(--space-md); color: var(--color-text-primary); font-weight: 600; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+        .app-footer { background-color: var(--color-bg-surface); padding: var(--space-xl) 0 var(--space-lg); border-top: 1px solid #EAE8D8; }
+        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+        .footer-grid h4 { color: var(--color-gold-dark); margin-bottom: var(--space-md); font-size: var(--text-lg); font-weight: 600; }
+        .footer-grid p { color: var(--color-text-secondary); font-size: var(--text-sm); }
+        .footer-bottom { border-top: 1px solid #EAE8D8; padding-top: var(--space-lg); color: var(--color-text-secondary); font-size: var(--text-sm); }
+
+        /* =========================================================
+           WHATSAPP FAB
+        ========================================================= */
+        .fab-whatsapp {
+            position: fixed; bottom: 32px; right: 32px; width: 64px; height: 64px;
+            background-color: var(--color-whatsapp); color: #fff; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); z-index: 1000;
+            transition: transform var(--transition-fast), background var(--transition-fast);
+            will-change: transform;
+        }
+        .fab-whatsapp:hover { transform: scale(1.1); background-color: #20BA56; }
+
+        /* =========================================================
+           ANIMAÇÕES (INTERSECTION OBSERVER)
+        ========================================================= */
+        .fade-in-up {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+
+        /* =========================================================
+           RESPONSIVIDADE ALGORÍTMICA
+        ========================================================= */
+        @media (max-width: 992px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .split-layout, .split-layout.reverse { flex-direction: column; text-align: center; gap: 3rem; }
+            .separator.left { margin: var(--space-md) auto; }
+            .accreditations { justify-content: center; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        }
+
+        @media (max-width: 768px) {
+            .header-actions .btn { display: none; } 
+            .mobile-toggle { display: block; }
+            
+            .nav-container {
+                position: fixed; top: 90px; left: -100%; width: 100%; height: calc(100vh - 90px);
+                background-color: var(--color-bg-base);
+                display: flex; align-items: flex-start; justify-content: center;
+                padding-top: var(--space-xl); transition: left var(--transition-smooth);
+            }
+            .nav-container.is-open { left: 0; }
+            .nav-list { flex-direction: column; align-items: center; }
+            
+            .mobile-toggle.is-active .line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            .mobile-toggle.is-active .line:nth-child(2) { opacity: 0; }
+            .mobile-toggle.is-active .line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+            .bento-grid { grid-template-columns: 1fr; }
+            
+            .hero-video-container { height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="app-header" id="header">
+        <div class="container header-grid">
+            <a href="#" class="brand-logo" aria-label="Dr. Rafael Home">
+                <span class="brand-title">Dr. Rafael</span>
+                <span class="brand-subtitle">CRM-SC 32801</span>
+            </a>
+
+            <nav class="nav-container" id="nav-container" aria-label="Navegação Principal">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link">Início</a></li>
+                    <li><a href="#tratamentos" class="nav-link">Protocolos</a></li>
+                    <li><a href="#sobre" class="nav-link">O Médico</a></li>
+                    <li><a href="#clinica" class="nav-link">A Clínica</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://wa.me/5547991600349?text=Ol%C3%A1%2C%20Dr.%20Rafael!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn--gold btn--small">
+                    Agendar
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-label="Abrir Menu">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================= HERO ================= -->
+        <div class="hero-wrapper" id="hero">
+            <!-- VÍDEO PURO. SEM FILTROS. SEM TEXTOS POR CIMA. MÁXIMA RESOLUÇÃO. -->
+            <div class="hero-video-container">
+                <video class="hero-media" autoplay loop muted playsinline disablePictureInPicture>
+                    <source src="assets/dr.rafael_corte.mp4" type="video/mp4" />
+                </video>
+            </div>
+            
+            <!-- TEXTOS E BOTÃO MOVIDOS PARA BAIXO DO VÍDEO -->
+            <div class="hero-text-bar fade-in-up">
+                <div class="container">
+                    <h1 class="hero-title">Medicina de Precisão & Longevidade</h1>
+                    <p class="hero-description">Protocolos individualizados para a sua melhor versão anatômica e metabólica.</p>
+                    <a href="https://wa.me/5547991600349?text=Ol%C3%A1%2C%20Dr.%20Rafael!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn--gold mt-lg">
+                        Agendar Avaliação
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PROTOCOLOS ================= -->
+        <section id="tratamentos" class="section bg-surface">
+            <div class="container">
+                <header class="section-header text-center fade-in-up">
+                    <h2 class="section-title">Nossos Protocolos</h2>
+                    <div class="separator"></div>
+                </header>
+
+                <div class="bento-grid mt-xl">
+                    <!-- Emagrecimento -->
+                    <article class="bento-card fade-in-up">
+                        <img src="assets/dr-rafael-atendimento-antropometria-paciente.jpeg" alt="Avaliação de Composição" class="bento-img" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="bento-overlay">
+                            <h3>Emagrecimento</h3>
+                            <p>Protocolo individualizado de perda de peso.</p>
+                            <a href="procedimentos/emagrecimento.html" class="btn btn--outline mt-md">Acessar Guia</a>
+                        </div>
+                    </article>
+
+                    <!-- Injetáveis -->
+                    <article class="bento-card fade-in-up" style="transition-delay: 100ms;">
+                        <img src="assets/dr-rafael-injetaveis.jpeg" alt="Terapia Injetável" class="bento-img" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="bento-overlay">
+                            <h3>Terapia Injetável</h3>
+                            <p>Nutrientes e ativos direcionados.</p>
+                            <a href="procedimentos/terapia-injetavel.html" class="btn btn--outline mt-md">Acessar Guia</a>
+                        </div>
+                    </article>
+
+                    <!-- Reposição Hormonal -->
+                    <article class="bento-card fade-in-up" style="transition-delay: 200ms;">
+                        <img src="assets/dr-rafael-explicacao.jpeg" alt="Reposição Hormonal" class="bento-img" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="bento-overlay">
+                            <h3>Reposição Hormonal</h3>
+                            <p>Equilíbrio hormonal com segurança médica.</p>
+                            <a href="procedimentos/reposicao-hormonal.html" class="btn btn--outline mt-md">Acessar Guia</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-xl fade-in-up links-secundarios">
+                    <a href="procedimentos/ganho-de-massa.html" class="text-link">Entenda sobre Ganho de Massa</a>
+                    <span class="dot">•</span>
+                    <a href="procedimentos/entenda-emagrecimento.html" class="text-link">Entenda o Emagrecimento</a>
+                    <span class="dot">•</span>
+                    <a href="procedimentos/entenda-hipertrofia.html" class="text-link">Entenda a Hipertrofia</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= O MÉDICO ================= -->
+        <section id="sobre" class="section bg-base">
+            <div class="container split-layout">
+                <figure class="split-visual fade-in-up">
+                    <img src="assets/dr-rafael-jaleco-janela.jpeg" alt="Dr. Rafael na Clínica" class="rounded-image shadow-premium" loading="lazy" onerror="this.style.display='none'" />
+                </figure>
+                
+                <div class="split-content fade-in-up">
+                    <h2 class="section-title">Dr. Rafael</h2>
+                    <p class="section-subtitle">CRM-SC 32801</p>
+                    <div class="separator left"></div>
+                    
+                    <p class="paragraph">A medicina voltada para a performance e longevidade exige muito mais do que prescrições padronizadas. Exige um olhar minucioso, pautado na ciência e no respeito à individualidade biológica.</p>
+                    <p class="paragraph">Meu compromisso é investigar a fundo seu metabolismo — composição corporal, exames laboratoriais e histórico clínico — para alinhar expectativas anatômicas com saúde plena.</p>
+                    
+                    <div class="accreditations mt-lg">
+                        <img src="assets/image_37395e.png" alt="SBCP" class="seal" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="assets/image_373c9a.png" alt="ISAPS" class="seal" loading="lazy" onerror="this.style.display='none'" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CASOS CLÍNICOS ================= -->
+        <section id="resultados" class="section bg-surface text-center">
+            <div class="container fade-in-up">
+                <h2 class="section-title">Evolução Clínica</h2>
+                <div class="separator"></div>
+                <p class="paragraph mt-md mb-md">Resultados construídos com precisão, disciplina e acompanhamento rigoroso.</p>
+                
+                <div class="results-grid mt-xl">
+                    <figure class="result-card">
+                        <img src="assets/Juliieta_irma.jpeg" alt="Evolução de paciente Julieta" loading="lazy" onerror="this.style.display='none'" />
+                        <figcaption>Julieta — Recomposição Corporal</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= A CLÍNICA ================= -->
+        <section id="clinica" class="section bg-base">
+            <div class="container split-layout reverse">
+                <figure class="split-visual fade-in-up">
+                    <img src="assets/dr-rafael-diagnostico-analise-tablet-casual.jpeg" alt="Dr. Rafael com Tablet" class="rounded-image shadow-premium" loading="lazy" onerror="this.style.display='none'" />
+                </figure>
+                
+                <div class="split-content fade-in-up">
+                    <h2 class="section-title">Experiência e Estrutura</h2>
+                    <div class="separator left"></div>
+                    <p class="paragraph">Oferecemos um ambiente de alto padrão, projetado para o seu conforto, segurança e sigilo absoluto.</p>
+                    <p class="paragraph">Avaliamos detalhadamente o seu caso utilizando tecnologia avançada para diagnósticos precisos e para mapear o melhor caminho clínico.</p>
+                    
+                    <a href="https://wa.me/5547991600349?text=Ol%C3%A1%2C%20Dr.%20Rafael!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn--gold mt-lg">Fale com a Equipe</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="app-footer bg-surface">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2 class="brand-title">Dr. Rafael</h2>
+                <p>Nutrologia & Endocrinologia<br>CRM-SC 32801</p>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p>WhatsApp: <br><a href="https://wa.me/5547991600349" target="_blank" class="text-link">+55 (47) 99160-0349</a></p>
+            </div>
+            
+            <div class="footer-legal">
+                <h4>Aviso Legal</h4>
+                <p>As informações contidas neste site possuem caráter estritamente informativo. Tratamentos médicos requerem avaliação presencial conforme normativas do CFM.</p>
+            </div>
+        </div>
+        <div class="container footer-bottom text-center mt-xl">
+            <p>&copy; 2026 Dr. Rafael. Engineered with Precision.</p>
+        </div>
+    </footer>
+
+    <!-- WIDGET WHATSAPP SVG INLINE -->
+    <a href="https://wa.me/5547991600349?text=Ol%C3%A1%2C%20Dr.%20Rafael!%20Gostaria%20de%20agendar%20uma%20consulta." class="fab-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="currentColor"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.82.735 5.467 2.023 7.8L.5 32l8.406-1.488C11.134 31.545 13.486 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.35c-2.458 0-4.783-.64-6.804-1.765l-.488-.288-5.048.893.908-4.935-.316-.503C2.955 20.665 2.25 18.4 2.25 16c0-7.585 6.165-13.75 13.75-13.75 7.585 0 13.75 6.165 13.75 13.75S23.585 29.35 16 29.35zm7.533-10.315c-.413-.207-2.443-1.208-2.823-1.345-.38-.138-.655-.207-.93.207-.276.413-1.068 1.345-1.31 1.62-.24.276-.482.31-.895.104-2.18-.89-3.79-1.92-5.35-4.48-.207-.345.207-.31.603-.896.138-.207.069-.38-.034-.586-.104-.207-.93-2.24-1.275-3.068-.335-.805-.678-.696-.93-.71-.24-.013-.517-.013-.792-.013-.276 0-.724.103-1.103.517-.38.414-1.448 1.414-1.448 3.448 0 2.035 1.483 4.001 1.69 4.276.207.276 2.915 4.437 7.056 6.23 2.766 1.198 3.842 1.288 4.547 1.085.82-.236 2.443-1 2.788-1.966.345-.965.345-1.793.24-1.965-.103-.173-.379-.276-.793-.483z"/></svg>
+    </a>
+
+    <!-- LÓGICA JAVASCRIPT O(1) -->
+    <script>
+        'use strict';
+        document.addEventListener("DOMContentLoaded", () => {
+            const DOM = {
+                mobileToggle: document.getElementById('mobile-toggle'),
+                navContainer: document.getElementById('nav-container'),
+                navLinks: document.querySelectorAll('.nav-link'),
+                animatedElements: document.querySelectorAll('.fade-in-up')
+            };
+
+            // MENU MOBILE
+            if (DOM.mobileToggle) {
+                const toggleMenu = () => {
+                    const isOpen = DOM.navContainer.classList.contains('is-open');
+                    DOM.navContainer.classList.toggle('is-open');
+                    DOM.mobileToggle.classList.toggle('is-active');
+                    DOM.mobileToggle.setAttribute('aria-expanded', !isOpen);
+                    document.body.style.overflow = isOpen ? '' : 'hidden'; 
+                };
+
+                DOM.mobileToggle.addEventListener('click', toggleMenu);
+
+                DOM.navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (DOM.navContainer.classList.contains('is-open')) toggleMenu();
+                    });
+                });
+            }
+
+            // INTERSECTION OBSERVER (ANIMAÇÕES SEM LAG)
+            if ('IntersectionObserver' in window) {
+                const observerOptions = { root: null, rootMargin: '0px 0px -5% 0px', threshold: 0.1 };
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                DOM.animatedElements.forEach(el => observer.observe(el));
+            } else {
+                DOM.animatedElements.forEach(el => el.classList.add('is-visible'));
+            }
+        });
+    </script>
+</body>
+</html>
